@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eaf4ff">
+  <title>Weather Now</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">LOCAL WEATHER</p>
+        <h1>Weather Now</h1>
+      </div>
+      <span class="header-icon" aria-hidden="true">☀️</span>
+    </header>
+
+    <form id="search-form" class="search-form">
+      <label class="field">
+        <span>Country</span>
+        <select id="country" name="country">
+          <option value="PK">Pakistan</option>
+          <option value="IN">India</option>
+          <option value="BD">Bangladesh</option>
+        </select>
+      </label>
+      <label class="field city-field">
+        <span>City</span>
+        <input id="city" name="city" type="text" placeholder="e.g. Karachi" value="Karachi" required>
+      </label>
+      <button type="submit">Check weather</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite">Loading weather…</p>
+
+    <section id="weather-card" class="weather-card" aria-label="Current weather" hidden>
+      <div class="location-row">
+        <div>
+          <p id="location" class="location"></p>
+          <p id="local-time" class="local-time"></p>
+        </div>
+        <span id="weather-icon" class="weather-icon" aria-hidden="true"></span>
+      </div>
+      <div class="temperature-row">
+        <p class="temperature"><span id="temperature"></span><span class="degree">°C</span></p>
+        <p id="condition" class="condition"></p>
+      </div>
+      <div class="details">
+        <div class="detail"><span>Feels like</span><strong><span id="feels-like"></span>°C</strong></div>
+        <div class="detail"><span>Humidity</span><strong><span id="humidity"></span>%</strong></div>
+        <div class="detail"><span>Wind</span><strong><span id="wind"></span> km/h</strong></div>
+        <div class="detail"><span>Today's high</span><strong><span id="high"></span>°C</strong></div>
+        <div class="detail"><span>Today's low</span><strong><span id="low"></span>°C</strong></div>
+        <div class="detail"><span>Sunrise</span><strong id="sunrise"></strong></div>
+      </div>
+    </section>
+
+    <footer>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a></footer>
+  </main>
+</body>
+</html>
